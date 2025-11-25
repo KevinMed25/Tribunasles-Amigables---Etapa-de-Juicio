@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etapa de Juicio</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header__enlace">
+            <a href="https://app.prevencionamigable.com.mx/#games">
+                <img src="src/img/flecha.png" alt="imagen flecha">
+            </a>
+        </div>
+        <div class="nube">
+            <div class="nube__imagen">
+                <h1 class="nube__heading">Etapa de Juicio</h1>
+            </div>
+        </div>
+        <div class="header__enlace">
+            <a href="https://app.prevencionamigable.com.mx/">
+                <img src="src/img/casa.png" alt="imagen casa">
+            </a>
+        </div>
+    </header>
+    <main class="main">
+
+        <div class="tito__contenedor__dialogo oculto">
+            <div class="tito__dialogo">
+                <div class="tito__head">
+                    <p>Tito</p>
+                    <img class="tito__head__imagen" src="src/img/tito-head.png" alt="">
+                </div>
+                <div class="tito__contenedor__parrafo">
+                    <p class="tito__dialogo__parrafo"></p>
+                </div>
+                <img class="imagen_cerrar_dialogo_tito" src="src/img/x_3d.png" alt="">
+            </div>
+        </div> <!-- termina contenedor del dialogo de tito -->
+
+        <div class="itzel__contenedor__dialogo oculto">
+            <div class="itzel__dialogo">
+                <div class="itzel__head">
+                    <p>Itzel</p>
+                    <img class="itzel__head__imagen" src="src/img/itzel-head.png" alt="">
+                </div>
+                <div class="itzel__contenedor__parrafo">
+                    <p class="itzel__dialogo__parrafo"></p>
+                </div>
+                <img class="imagen_cerrar_dialogo_itzel" src="src/img/x_3d.png" alt="">
+            </div>
+        </div> <!-- termina contenedor del dialogo de itzel -->
+
+        <div class="tito__contenedor">
+            <img class="tito__imagen" src="src/img/Tito.png" alt="Imagen de Tito">
+        </div> <!-- termina contenedor de tito-->
+
+        <div class="jueza__contenedor__dialogo oculto">
+            <div class="jueza__dialogo">
+                <div class="jueza__head">
+                    <p>Jueza</p>
+                    <img class="jueza__head__imagen" src="src/img/jueza-head.png" alt="">
+                </div>
+                <div class="jueza__contenedor__parrafo">
+                    <p class="jueza__dialogo__parrafo"></p>
+                </div>
+                <img class="imagen_cerrar_dialogo_jueza" src="src/img/x_3d.png" alt="">
+            </div>
+        </div>
+        <div class="jueza__contenedor oculto">
+            <img class="jueza__imagen" src="src/img/Jueza.png" alt="Imagen de la jueza">
+        </div> <!-- terminar contenedor de la jueza-->
+
+        <div class="escenario__contenedor">
+            <img class="escenario__imagen" src="src/img/Sala de juicio.jpg" alt="Imagen del escenario">
+        </div> <!-- termina contenedor del escenario -->
+    
+        <div class="itzel__contenedor">
+            <img class="itzel__imagen" src="src/img/Itzel.png" alt="Imagen de Itzel">
+        </div>
+
+        <div class="memorama__contenedor oculto">
+            <!-- Las tarjetas del memorama se generarán aquí con JavaScript -->
+        </div>
+        <button class="btn-dialogo">
+            <img width="115px" src="src/img/dialog_3d.png" alt="Imagen de dialogo">
+        </button>
+        <button class="btn-sonido">
+            <img width="115px" src="src/img/sound_on_3d.png" alt="Imagen de sonido">
+        </button>
+
+        <button class="btn-galeria">
+            <img width="115px" src="src/img/gallery_3d.webp" alt="Imagen de icono de galeria">
+        </button>
+
+    </main>
+
+    <div id="modal" class="modal">
+        <div class="modal__contenido">
+            <h4>Bienvenido/a</h4>
+            <div class="modal__contenido-visual">
+                <video class="video__tutorial" src="src/main_tutorial.mp4" muted playsinline></video>
+            </div>
+            <p>
+                Bienvenido/a al primer contacto con la sala de juicios <br>
+                Para continuar con la progresión de la historia, deberás hacer click en los objetos que <span style="display: inline-block;"  class="animate-clickable">pulsen</span>
+            </p>
+            <button class="modal__contenido__cerrar btn-continuar animate-clickable">Empezar juego</button>
+        </div>
+
+    </div>
+
+    <audio class="audio_lobby" src="src/lobby-low.mp3"></audio>
+    <audio class="audio_tito" src="src/tito_voice.mp3"></audio>
+    <audio class="audio_jueza" src="src/itzel_voice.mp3"></audio> 
+    <audio class="audio_itzel" src="src/itzel_voice.mp3"></audio><!-- Necesitamos voz para itzel -->
+    <audio class="audio_acierto" src="src/acierto.mp3"></audio>
+    <audio class="audio_flip" src="src/page sound.mp3"></audio>
+    <audio class="audio_confeti" src="src/Confeti.mp3"></audio>
+    <footer class="footer">
+        <p class="footer__parrafo">
+            UNIVERSIDAD AUTÓNOMA DE YUCATÁN | ©TODOS LOS DERECHOS RESERVADOS
+        </p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script src="js/app.js" type="module"></script>
+</body>
+</html>

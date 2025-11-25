@@ -1,0 +1,514 @@
+:root {
+    --morado: #8300C4;
+    --rosado: #D14081;
+    --blanco: #FFFFFF
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; /* 1REM = 10px */
+    height: 100%;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.6rem;
+    line-height: 2;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+/* Globales */
+h1, 
+h2, 
+h3 {
+    font-family: 'Playfair Display', serif;
+    margin: 0 0 2rem 0;
+}
+h1 {
+    font-size: 4rem;
+}
+
+/* @media (min-width: 768px) {
+    h1{
+        font-size: 5rem;
+    }
+} */
+
+h2 {
+    font-size: 3.2rem;
+}
+
+/* @media (min-width: 768px ){
+    h2{
+        font-size: 4rem;
+    }
+} */
+h3 {
+    font-size: 2.5rem;
+}
+
+/* @media(min-width: 768px){
+    h3{
+        font-size: 3rem;
+    }
+} */
+
+a {
+    text-decoration: none;
+}
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+img {
+    max-width: 100%;
+    display: block;
+}
+
+h1, p{
+    margin: 0;
+}
+
+
+
+.header{
+    background-color: var(--morado);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nube__imagen{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 500px; 
+    height: 150px; 
+    background-image: url('../src/img/Nube.png'); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.nube__heading{
+    color: var(--rosado);
+    text-align: center;
+    font-weight: bold;
+}
+
+.header__enlace{
+    transition-property: transform;;
+    transition-duration: 0.3s;
+}
+
+.header__enlace:hover{
+    transform: scale(1.2);
+}
+
+.footer{
+    background-color: var(--morado);
+    margin-top: auto;
+}
+
+.footer__parrafo{
+    text-align: center;
+    color: var(--blanco);
+}
+
+.main{
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 1fr;
+    column-gap: 1rem;
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    overflow: hidden;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    user-select: none;
+    padding: 5rem 0 10.5rem 0;
+    flex: 1;
+    background-image: url('../src/img/bg.png');
+    background-position: center bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.escenario__contenedor {
+    grid-column: 2 / 8; /* Ocupa desde la columna 2 hasta la 6 */
+    display: flex;
+    justify-content: center;
+}
+
+.tito__contenedor, .itzel__contenedor, .jueza__contenedor {
+    position: absolute;
+}
+
+/* Posicionamiento inicial de los personajes */
+.tito__contenedor {
+    grid-column: 2 / 4; /* Ocupa columnas 2 y 3 */
+}
+
+.jueza__contenedor {
+    /* Se posicionará desde JS */
+}
+
+.itzel__contenedor {
+    grid-column: 7 / 8; /* Ocupa la columna 7 */
+}
+
+.tito__contenedor:hover, .jueza__contenedor:hover, .itzel__contenedor:hover{
+    cursor: pointer;
+}
+
+.tito__contenedor, .itzel__contenedor, .jueza__contenedor {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    justify-content: end;
+}
+
+.escenario__contenedor img{
+    width: 100%;
+    height: 100%;
+}
+
+.tito__contenedor, .itzel__contenedor {
+    display: flex;
+}
+
+
+.tito__imagen, .itzel__imagen, .jueza__imagen {
+    /* Establece una altura fija para que no cambie de tamaño entre estados */
+    height: 50%; 
+    width: auto; /* Mantiene la proporción de la imagen */
+    object-fit: contain; /* Evita que la imagen se estire */
+}
+
+.tito__contenedor__dialogo:nth-child(1){
+    grid-column-start: 3;
+    grid-column-end: 5;
+    position: absolute;
+    width: 100%;
+    height: 110%;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.itzel__contenedor__dialogo:nth-child(2){
+    grid-column-start: 6;
+    grid-column-end: 8;
+    position: absolute;
+    width: 100%;
+    height: 110%;
+    flex-direction: column;
+    justify-content: center;
+    bottom: 1%;
+}
+
+.jueza__contenedor__dialogo:nth-child(4){
+    grid-column-start: 4;
+    grid-column-end: 6;
+    position: absolute;
+    width: 100%;
+    height: 110%;
+    flex-direction: column;
+    justify-content: center;
+    bottom: 24%; /* Mueve el diálogo hacia arriba */
+}
+
+.tito__dialogo, .jueza__dialogo, .itzel__dialogo {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: rgb(0, 0, 0, 0.7);
+    border-radius: 2rem;
+}
+
+.tito__head, .jueza__head, .itzel__head {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 253, 240, 0.25);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    width: fit-content;
+    min-width: 8rem;
+    min-height: 7rem;
+    max-width: 8rem;
+    max-height:10rem;
+}
+
+
+.tito__dialogo, .jueza__dialogo, .itzel__dialogo{
+    color: var(--blanco); 
+    width: 100%;
+    text-wrap: auto;
+    text-align: center;
+}
+
+.oculto {
+    display: none;
+}
+
+.flex {
+    display: flex;
+}
+
+@keyframes clickable {
+    0%{
+        filter: drop-shadow(0 0 .5rem #0000004d);
+        transform: scale(1)
+    }
+    to {
+        filter: drop-shadow(0 0 1rem #00000080);
+        transform: scale(1.05)
+    }
+}
+
+.animate-clickable{
+    animation: 0.4s infinite alternate clickable;
+}
+
+.imagen_cerrar_dialogo_tito{
+    width: 11%;
+    position: absolute;
+    right: -6%;
+    top: -25%;
+    cursor: pointer;
+    color: white;
+}
+
+.imagen_cerrar_dialogo_tito:hover{
+    scale: 110%;
+    filter: brightness(150%);
+}
+
+.imagen_cerrar_dialogo_jueza, .imagen_cerrar_dialogo_itzel {
+    width: 11%;
+    position: absolute;
+    right: -5%;
+    top: -25%;
+    cursor: pointer;
+    color: white;
+}
+
+.imagen_cerrar_dialogo_jueza:hover, .imagen_cerrar_dialogo_itzel:hover{
+    scale: 110%;
+    filter: brightness(150%);
+}
+
+.btn-dialogo, .btn-sonido, .btn-galeria{
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    display: inline-block;
+    height: auto;
+    width: auto;
+    z-index: 10;
+}
+
+.btn-sonido{
+    top: 0;
+    right: 10%;
+}
+
+.btn-dialogo:hover, .btn-sonido:hover, .btn-galeria:hover{
+    scale: 115%;
+    rotate: 5;
+    cursor: pointer;
+}
+
+.btn-dialogo{
+    top: 0;
+    left: 10%;
+}
+
+.tito__contenedor__parrafo, .jueza__contenedor__parrafo, .itzel__contenedor__parrafo{
+    width: 100%;
+}
+
+.tito__head p, .jueza__head p, .itzel__head p{
+    font-weight: bold;
+}
+
+.btn-continuar{
+    margin-top: 1rem;
+    background-color: var(--morado);
+    color: var(--blanco);
+    font-weight: bold;
+    padding: 0.8rem 1rem;
+    border: none;
+    border-radius: 1rem;
+}
+
+.btn-continuar:hover{
+    cursor: pointer;
+}
+
+.animate-talking-minihead {
+    animation: .11s linear infinite alternate talking-minihead
+}
+
+.animate-talking {
+    animation: .3s linear infinite alternate talking
+}
+
+@keyframes talking-minihead {
+    0% {
+        transform: translateY(0)
+    }
+
+    to {
+        transform: translateY(-.2rem)scale(1.08)
+    }
+}
+
+@keyframes talking {
+    0% {
+        transform: rotate(-2deg)
+    }
+
+    to {
+        transform: rotate(2deg)
+    }
+}
+
+.modal{
+    position: fixed;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0,0,0.5);
+
+}
+
+.modal__contenido{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--blanco);
+    padding: 2rem 5rem;
+    border-radius: 0.8rem;
+    position: relative;
+    width: 80%;
+    max-width: 50rem;
+    box-shadow: 0 0.4rem 0.8rem 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.modal__contenido h4{
+    margin: 1rem 0;
+}
+
+.modal__contenido p{
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.video__tutorial{
+    max-width: 100%;
+}
+
+
+.btn-galeria{
+    right: 8%;
+    bottom: 5%;
+}
+
+/* Estilos para el Juego de Memorama */
+.memorama__contenedor {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2rem;
+    padding: 2rem;
+    perspective: 1000px; /* Para el efecto 3D de voltear */
+    /* Posiciona el tablero como una capa superpuesta en la parte inferior */
+    position: absolute;
+    bottom: 20%;
+    left: 15%;
+    right: 15%;
+}
+
+.memorama__tarjeta {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Para que sean cuadradas */
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    cursor: pointer;
+}
+
+.memorama__tarjeta.volteada {
+    transform: rotateY(180deg);
+}
+
+.memorama__tarjeta.acertada {
+    cursor: default;
+    opacity: 0.5; /* Hacemos las tarjetas acertadas un poco transparentes */
+}
+
+.memorama__tarjeta-cara {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Oculta la cara trasera del elemento */
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.memorama__tarjeta-reverso {
+    background-color: var(--morado);
+    background-image: url('../src/img/interrogación.png');
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.memorama__tarjeta-frente {
+    background-color: #e8f383;
+    transform: rotateY(180deg);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.memorama__tarjeta-frente img {
+    max-width: 100%;
+    max-height: 70%;
+    object-fit: contain;
+}
+
+.memorama__tarjeta-nombre {
+    font-size:3rem;
+    font-weight: bold;
+    color: var(--morado);
+    margin: 0;
+    margin-bottom: 1.2rem;
+    padding: 0;
+    line-height: 1;
+    text-align: center;
+}
